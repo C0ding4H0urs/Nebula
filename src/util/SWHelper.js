@@ -19,8 +19,7 @@ function uninstallServiceWorkers() {
 }
 
 function registerServiceWorker() {
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
+    navigator?.serviceWorker
       .register("/sw.js", {
         scope: "/~/"
       })
@@ -28,7 +27,6 @@ function registerServiceWorker() {
         console.log("Service worker registered successfully");
         setTransport();
       });
-  }
 }
 
 export { updateServiceWorkers, uninstallServiceWorkers, registerServiceWorker };
